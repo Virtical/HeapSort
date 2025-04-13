@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace HeapSort.Tests;
 
@@ -12,8 +13,8 @@ public class HeapifyTests
 
         var result = HeapSortAlgorithm.Heapify(array, 3, 0, ref ifCount, ref swapCount);
 
-        Assert.That(result, Is.EqualTo(array));
-        Assert.That(swapCount, Is.EqualTo(0));
+        result.Should().Equal(array);
+        swapCount.Should().Be(0);
     }
     
     [Test]
@@ -24,10 +25,10 @@ public class HeapifyTests
 
         var result = HeapSortAlgorithm.Heapify(array, 3, 0, ref ifCount, ref swapCount);
 
-        Assert.That(result[0], Is.EqualTo(10));
-        Assert.That(result[1], Is.EqualTo(5));
-        Assert.That(result[2], Is.EqualTo(3));
-        Assert.That(swapCount, Is.EqualTo(1));
+        result[0].Should().Be(10);
+        result[1].Should().Be(5);
+        result[2].Should().Be(3);
+        swapCount.Should().Be(1);
     }
 
     [Test]
@@ -38,9 +39,9 @@ public class HeapifyTests
 
         var result = HeapSortAlgorithm.Heapify(array, 3, 0, ref ifCount, ref swapCount);
 
-        Assert.That(result[0], Is.EqualTo(10));
-        Assert.That(result[2], Is.EqualTo(5));
-        Assert.That(swapCount, Is.EqualTo(1));
+        result[0].Should().Be(10);
+        result[2].Should().Be(5);
+        swapCount.Should().Be(1);
     }
     
     [Test]
@@ -51,9 +52,9 @@ public class HeapifyTests
 
         var result = HeapSortAlgorithm.Heapify(array, 5, 1, ref ifCount, ref swapCount);
 
-        Assert.That(result[1], Is.EqualTo(8));
-        Assert.That(result[4], Is.EqualTo(5));
-        Assert.That(swapCount, Is.EqualTo(1));
+        result[1].Should().Be(8);
+        result[4].Should().Be(5);
+        swapCount.Should().Be(1);
     }
     
     [Test]
@@ -64,8 +65,8 @@ public class HeapifyTests
 
         var result = HeapSortAlgorithm.Heapify(array, array.Length, 0, ref ifCount, ref swapCount);
 
-        Assert.That(result[0], Is.GreaterThanOrEqualTo(result[1]));
-        Assert.That(result[0], Is.GreaterThanOrEqualTo(result[2]));
-        Assert.That(swapCount, Is.GreaterThan(0));
+        result[0].Should().BeGreaterThanOrEqualTo(result[1]);
+        result[0].Should().BeGreaterThanOrEqualTo(result[2]);
+        swapCount.Should().BeGreaterThan(0);
     }
 }

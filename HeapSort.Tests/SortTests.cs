@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 
 namespace HeapSort.Tests;
 
@@ -14,9 +15,9 @@ public class SortTests
 
         var result = HeapSortAlgorithm.Sort(array, ref ifCount, ref swapCount);
 
-        Assert.That(result, Is.EqualTo(expected));
-        Assert.That(ifCount, Is.GreaterThan(0));
-        Assert.That(swapCount, Is.GreaterThan(0));
+        result.Should().Equal(expected);
+        ifCount.Should().BeGreaterThan(0);
+        swapCount.Should().BeGreaterThan(0);
     }
 
     [Test]
@@ -27,9 +28,9 @@ public class SortTests
 
         var result = HeapSortAlgorithm.Sort(array, ref ifCount, ref swapCount);
 
-        Assert.That(result, Is.Empty);
-        Assert.That(ifCount, Is.EqualTo(0));
-        Assert.That(swapCount, Is.EqualTo(0));
+        result.Should().BeEmpty();
+        ifCount.Should().Be(0);
+        swapCount.Should().Be(0);
     }
 
     [Test]
@@ -40,8 +41,7 @@ public class SortTests
 
         var result = HeapSortAlgorithm.Sort(array, ref ifCount, ref swapCount);
 
-        Assert.That(result.Length, Is.EqualTo(1));
-        Assert.That(result[0], Is.EqualTo(42));
-        Assert.That(swapCount, Is.EqualTo(0));
+        result.Should().ContainSingle().Which.Should().Be(42);
+        swapCount.Should().Be(0);
     }
 }
