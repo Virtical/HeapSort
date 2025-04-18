@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<experiments>
+    <experiment name="Arithmetic Progression">
+        <node name="Small Arithmetic Progression" startLength="100" maxLength="10000" repeat="20" diff="100"/>
+        <node name="Medium Arithmetic Progression" startLength="10000" maxLength="1000000" repeat="15" diff="10000"/>
+        <node name="Large Arithmetic Progression" startLength="1000000" maxLength="100000000" repeat="10" diff="1000000"/>
+        <node name="ExtraLarge Arithmetic Progression" startLength="100000000" maxLength="1000000000" repeat="5" diff="100000000"/>
+    </experiment>
+
+    <!--<experiment name="Geometric Progression">
+        <node name="Small Geometric Progression" minElement="0" maxElement="255" startLength="1000000000" maxLength="1000000000" repeat="10" znamen="10" />
+    </experiment>-->
+</experiments>

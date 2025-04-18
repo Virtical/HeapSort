@@ -2,7 +2,7 @@
 
 public static class HeapSortAlgorithm
 {
-    public static T[] Sort<T>(T[] array, ref int ifCount, ref int swapCount) where T : IComparable<T>
+    public static T[] Sort<T>(T[] array, ref ulong ifCount, ref ulong swapCount) where T : IComparable<T>
     {
         for (var i = array.Length / 2 - 1; i >= 0; i--)
         {
@@ -18,7 +18,7 @@ public static class HeapSortAlgorithm
         return array;
     }
 
-    public static T[] Heapify<T>(T[] array, int length, int topIndex, ref int ifCount, ref int swapCount) where T : IComparable<T>
+    public static T[] Heapify<T>(T[] array, int length, int topIndex, ref ulong ifCount, ref ulong swapCount) where T : IComparable<T>
     {
         ifCount += 3;
         
@@ -44,7 +44,7 @@ public static class HeapSortAlgorithm
         return Heapify(array, length, largestIndex, ref ifCount, ref swapCount);
     }
 
-    public static (T, T) Swap<T>(T x, T y, ref int swapCount) where T : IComparable<T>
+    public static (T, T) Swap<T>(T x, T y, ref ulong swapCount) where T : IComparable<T>
     {
         swapCount++;
         return (y, x);

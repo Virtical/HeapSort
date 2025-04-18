@@ -8,7 +8,7 @@ public class HeapifyTests
     [Test]
     public void WhenHeapifyCalledOnAlreadyValidHeap_ShouldNotSwap()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [20, 10, 15];
 
         var result = HeapSortAlgorithm.Heapify(array, 3, 0, ref ifCount, ref swapCount);
@@ -20,7 +20,7 @@ public class HeapifyTests
     [Test]
     public void WhenLeftChildIsLarger_ShouldSwapWithLeft()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [5, 10, 3];
 
         var result = HeapSortAlgorithm.Heapify(array, 3, 0, ref ifCount, ref swapCount);
@@ -34,7 +34,7 @@ public class HeapifyTests
     [Test]
     public void WhenRightChildIsLarger_ShouldSwapWithRight()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [5, 3, 10];
 
         var result = HeapSortAlgorithm.Heapify(array, 3, 0, ref ifCount, ref swapCount);
@@ -47,7 +47,7 @@ public class HeapifyTests
     [Test]
     public void WhenCalledOnMiddleElement_ShouldOnlyAffectSubtree()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [30, 5, 10, 2, 8];
 
         var result = HeapSortAlgorithm.Heapify(array, 5, 1, ref ifCount, ref swapCount);
@@ -60,7 +60,7 @@ public class HeapifyTests
     [Test]
     public void HeapifyOnLargeArray_ShouldWorkCorrectly()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0];
 
         var result = HeapSortAlgorithm.Heapify(array, array.Length, 0, ref ifCount, ref swapCount);

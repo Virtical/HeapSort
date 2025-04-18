@@ -8,7 +8,7 @@ public class SwapTests
     [Test]
     public void WhenCallingSwap_ShouldSwapAndIncrementSwapCount()
     {
-        var swapCount = 0;
+        ulong swapCount = 0;
 
         var result = HeapSortAlgorithm.Swap(1, 2, ref swapCount);
 
@@ -20,7 +20,7 @@ public class SwapTests
     [Test]
     public void SwapSameValues_ShouldStillIncrementSwapCount()
     {
-        var swapCount = 0;
+        ulong swapCount = 0;
 
         var result = HeapSortAlgorithm.Swap(5, 5, ref swapCount);
 
@@ -32,7 +32,7 @@ public class SwapTests
     [Test]
     public void MultipleSwaps_ShouldAccumulateSwapCount()
     {
-        var swapCount = 0;
+        ulong swapCount = 0;
 
         HeapSortAlgorithm.Swap(1, 2, ref swapCount);
         HeapSortAlgorithm.Swap(3, 4, ref swapCount);

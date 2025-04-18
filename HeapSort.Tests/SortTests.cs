@@ -9,7 +9,7 @@ public class SortTests
     [Test]
     public void WhenArrayIsUnsorted_ShouldSortCorrectly()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [4, 10, 3, 5, 1];
         int[] expected = [1, 3, 4, 5, 10];
 
@@ -23,7 +23,7 @@ public class SortTests
     [Test]
     public void WhenArrayIsEmpty_ShouldReturnEmpty()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [];
 
         var result = HeapSortAlgorithm.Sort(array, ref ifCount, ref swapCount);
@@ -36,7 +36,7 @@ public class SortTests
     [Test]
     public void WhenArrayHasOneElement_ShouldRemainUnchanged()
     {
-        int ifCount = 0, swapCount = 0;
+        ulong ifCount = 0, swapCount = 0;
         int[] array = [42];
 
         var result = HeapSortAlgorithm.Sort(array, ref ifCount, ref swapCount);
